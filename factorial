@@ -1,0 +1,51 @@
+Create a class with two functions-one recursive and one non recursive.
+Either of these
+function should be capable of calculating the factorial of a number
+
+
+Code:
+#include &lt;iostream&gt;
+using namespace std;
+class Fact{
+private:
+int fact;
+public:
+Fact(int x)
+{
+fact = x;
+
+}
+int Non_rec()
+{
+int out=1;
+for(int i=1;i&lt;=fact;i++)
+{
+out = out * i;
+}
+return out;
+}
+int rec(int rec_fact)
+{
+if(rec_fact&gt;1)
+{
+return rec_fact * rec(rec_fact-1);
+}
+else
+{
+return 1;
+}
+}
+
+};
+
+int main()
+{
+int x;
+cout &lt;&lt; &quot;Enter a Number:- &quot; &lt;&lt; endl;
+cin &gt;&gt; x;
+Fact factorial_1(x);
+printf(&quot;Recursive %d! = %d\n&quot;,x,factorial_1.rec(x));
+printf(&quot;Non-Recursive %d! =
+%d\n&quot;,x,factorial_1.Non_rec());
+
+}
